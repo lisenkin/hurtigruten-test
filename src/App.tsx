@@ -1,13 +1,20 @@
 import React from 'react';
 import SearchForm from './components/SearchForm/SearchForm';
+import { useState, useEffect } from 'react';
 
 function App() {
-  //useState for search  
+
+  const [results, setResults] = useState(null);
+
+ //display the result of the search
+  useEffect(() => {
+    console.log(results)
+  }, [results])
   return (
     <div className='container'>
      <h1 className='title' >Search Flow</h1>
-      <SearchForm value =''/>
-      <table>
+      <SearchForm   onSearch={setResults}/>
+     <table>
       <caption>search result</caption>
       <thead>
     <tr>
@@ -30,7 +37,7 @@ function App() {
     <td></td>
   </tr>
   </tbody>
-      </table>
+      </table> 
     </div>
   );
 }

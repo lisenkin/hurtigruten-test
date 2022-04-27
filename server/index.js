@@ -2,6 +2,10 @@ const express = require('express');
 const ships = require('./ships.json');
 const server = express();
 const port = 4000;
+const cors = require('cors'); // aww hello lovely cors (hate it from bootcamp)
+
+server.use(cors());
+
 
 server.listen(port, () => {
   console.log(`Server listening at ${port}`);
