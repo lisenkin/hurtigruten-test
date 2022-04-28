@@ -38,7 +38,9 @@
     color: #a0a0a0;
     
 }
-
+.search-form__input::placeholder:focus{
+    color: white;
+}
 .search-form__input:not(:placeholder-shown) ~ .search-form__button {
     transform: translateX(calc(-1 * var(--searchButtonWidth)));
   }
@@ -75,3 +77,4 @@
     background: white;
     
 }
+

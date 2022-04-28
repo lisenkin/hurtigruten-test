@@ -3,41 +3,23 @@ import SearchForm from './components/SearchForm/SearchForm';
 import { useState, useEffect } from 'react';
 
 function App() {
-
-  const [results, setResults] = useState(null);
+// any for fix ts states error, sorry
+  const [results, setResults] = useState<any>('');
 
  //display the result of the search
   useEffect(() => {
-    console.log(results)
   }, [results])
+
   return (
     <div className='container'>
      <h1 className='title' >Search Flow</h1>
       <SearchForm   onSearch={setResults}/>
-     <table>
-      <caption>search result</caption>
-      <thead>
-    <tr>
-      <th>header a</th>
-      <th>header b</th>
-      <th>header c</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-  </tr>
-  </tbody>
-      </table> 
+    <div className='results'>
+    <div className='ships_result'>{results.shipId}</div>
+    <div className='ships_result'>{results.heading}</div>
+    <div className='ships_result'>{results.shipyard}</div>
+    </div>
+    
     </div>
   );
 }

@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #F8F8F8;
 }
 
 code {
@@ -24,4 +25,7 @@ code {
   color: #3B3B3A;
   font-size: 14px;
   margin-bottom: 30px;
+}
+.results{
+  margin: 40px 0;
 }

@@ -12,16 +12,14 @@ const [searchValue, setSearchValue] = React.useState('')
 const onSubmit = (e) => {
   e.preventDefault();
   fetch(`http://localhost:4000/api/ships/${searchValue}`)
-    .then((res) => {
+    .then((res) => {   
       if (res.ok) {
         return res.json();
       }
       return Promise.reject(`Error: ${res.status}`)
     })
-    .then(searchResult => onSearch(searchResult))
+    .then(searchResult => onSearch(searchResult[0]))
     .catch(err => console.error(err))
-
-  console.log(' search is here!')
 
 };
 
